@@ -1,0 +1,23 @@
+﻿# DVC Pipeline Specification for AI-Adaptive Blood Donor Matching System
+# Academic Demonstration Data Pipeline
+
+stages:
+  generate_synthetic_dataset:
+    cmd: python backend/app/ml/synthetic_data_generator.py
+    deps:
+      - backend/app/ml/synthetic_data_generator.py
+    outs:
+      - backend/app/ml/data/synthetic_donor_responses.csv:
+          cache: true
+
+  train_donor_response_model:
+    cmd: python -m app.ml.train_model
+    deps:
+      - backend/app/ml/data/synthetic_donor_responses.csv
+      - backend/app/ml/train_model.py
+    outs:
+      - backend/app/ml/donor_response_model.joblib:
+          cache: true
+    metrics:
+      - backend/app/ml/model_metrics.json:
+          cache: false

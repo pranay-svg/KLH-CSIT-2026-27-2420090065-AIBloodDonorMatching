@@ -1,0 +1,8 @@
+﻿# DVC Ignore Rules
+backend/venv/
+node_modules/
+.git/
+.pytest_cache/
+__pycache__/
+*.pyc
+mlruns/

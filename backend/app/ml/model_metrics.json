@@ -1,0 +1,19 @@
+{
+  "accuracy": 0.6533,
+  "precision": 0.7232,
+  "recall": 0.6995,
+  "f1_score": 0.7111,
+  "roc_auc": 0.7178,
+  "test_sample_count": 300,
+  "train_sample_count": 1200,
+  "model_type": "RandomForestClassifier",
+  "features": [
+    "distance_km",
+    "donation_count",
+    "historical_acceptance_rate",
+    "avg_response_time_mins",
+    "days_since_last_donation",
+    "time_of_day",
+    "urgency_level"
+  ]
+}
